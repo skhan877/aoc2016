@@ -3,10 +3,13 @@ def parse_input(input):
     with open(input, "r") as f: 
         for line in f:
             arr.append(line.replace("\n",""))
+    arr = arr[0].split(", ")
     return arr
 
 def part_one(input):
-    pass
+    x_moves = input[::2]
+    y_moves = input[1::2]
+    return x_moves, y_moves
 
 def part_two(input):
     pass
@@ -14,6 +17,7 @@ def part_two(input):
 def main():
     f = "inputs/day1.txt"
     data = parse_input(f)
+    # print(data)
     print(part_one(data))
     print(part_two(data))
 
