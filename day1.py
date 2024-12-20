@@ -9,7 +9,9 @@ def parse_input(input):
 def part_one(input):
     x_moves = input[::2]
     y_moves = input[1::2]
-    return x_moves, y_moves
+    # return x_moves, y_moves
+    coords = (int(input[0][-1]), 0)
+    return coords
 
 def part_two(input):
     pass
