@@ -11,10 +11,12 @@ def part_one(input):
     x_moves = input[::2]
     y_moves = input[1::2]
     # return x_moves, y_moves
-    coords = [int(input[0][-1]), 0]
+    x, y = input[0][1], 0
+
+    # coords = [int(input[0][-1]), 0]
 
     for i in range(1,4):
-        print(coords)
+        print(x, y)
         if input[i-1][0] == "L":
             if input[i][0] == "L":
                 coords[1] -= int(input[i][1])
