@@ -11,20 +11,33 @@ def part_one(input):
     x_moves = input[::2]
     y_moves = input[1::2]
     # return x_moves, y_moves
-    x, y = input[0][1], 0
+
+    if input[0][0] == "R": x = int(input[0][1])
+    else: x = int(input[0][1]) * -1
+    y = 0
 
     # coords = [int(input[0][-1]), 0]
 
-    for i in range(1,4):
+    for i in range(1,10):
         print(x, y)
-        if input[i-1][0] == "L":
-            if input[i][0] == "L":
-                coords[1] -= int(input[i][1])
+        if i % 2 != 0: 
+        # y axis
+            if input[i-1][0] == "L":
+                if input[i][0] == "L": y -= int(input[i][1])
+                else: y += int(input[i][1])
             else:
-                coords[1] += int(input[i][1])
+                if input[i][0] == "L": y -= int(input[i][1])
+                else: y += int(input[i][1])
+        else:
+        # x axis
+            if input[i-1][0] == "L":
+                if input[i][0] == "L": x += int(input[i][1])
+                else: x -= int(input[i][1])
+            else:
+                if input[i][0] == "L": y += int(input[i][1])
+                else: x -= int(input[i][1])
 
-
-    return coords
+    return ('final', x, y)
 
 def part_two(input):
     pass
