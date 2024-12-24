@@ -16,24 +16,24 @@ def part_one(input):
         # print(input[i-1], x, y)
         prev_dir = input[i-1][0]
         cur_dir = input[i][0]
-        cur_move = input[i][1]
+        cur_move = int(input[i][1])
 
         if i % 2 != 0: 
         # y axis
             if prev_dir == "L":
-                if cur_dir == "L": y -= int(cur_move)
-                else: y += int(cur_move)
+                if cur_dir == "L": y -= cur_move
+                else: y += cur_move
             else:
-                if cur_dir == "L": y += int(cur_move)
-                else: y -= int(cur_move)
+                if cur_dir == "L": y += cur_move
+                else: y -= cur_move
         else:
         # x axis
             if prev_dir == "L":
-                if cur_dir == "L": x -= int(cur_move)
-                else: x += int(cur_move)
+                if cur_dir == "L": x -= cur_move
+                else: x += cur_move
             else:
-                if cur_dir == "L": x += int(cur_move)
-                else: x -= int(cur_move)
+                if cur_dir == "L": x += cur_move
+                else: x -= cur_move
 
     return (x, y), abs(x) + abs(y)
 
@@ -44,7 +44,11 @@ def main():
     f = "inputs/day1.txt"
     data = parse_input(f)
     # print(data)
-    # data = ['R5', 'L5', 'R5', 'R3']
+
+    # data = ['R2', 'L3']
+    # data = ['R2', 'R2', 'R2']
+    data = ['R5', 'L5', 'R5', 'R3']
+    
     print(part_one(data))
     print(part_two(data))
 
