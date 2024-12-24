@@ -9,14 +9,15 @@ def parse_input(input):
 def part_one(input):
     # print(input)
     n = len(input)
-    if input[0][0] == "R": x = int(input[0][1])
-    else: x = int(input[0][1]) * -1
+    first_dir = input[0][0]
+    first_move = int(input[0][1:])
+    x = first_move if first_dir == "R" else first_move * -1
     y = 0
     for i in range(1, n):
-        # print(input[i-1], x, y)
+        print(input[i-1], (x, y), input[i])
         prev_dir = input[i-1][0]
         cur_dir = input[i][0]
-        cur_move = int(input[i][1])
+        cur_move = int(input[i][1:])
 
         if i % 2 != 0: 
         # y axis
@@ -47,7 +48,7 @@ def main():
 
     # data = ['R2', 'L3']
     # data = ['R2', 'R2', 'R2']
-    data = ['R5', 'L5', 'R5', 'R3']
+    # data = ['R5', 'L5', 'R5', 'R3']
     
     print(part_one(data))
     print(part_two(data))
