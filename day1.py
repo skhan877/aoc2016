@@ -6,54 +6,6 @@ def parse_input(input):
     arr = arr[0].split(", ")
     return arr
 
-# def part_one(input):
-#     # print(input)
-#     n = len(input)
-#     first_dir = input[0][0]
-#     first_move = int(input[0][1:])
-#     x = first_move if first_dir == "R" else first_move * -1
-#     y = 0
-#     for i in range(1, n):
-#         print(i, input[i-1], (x, y), input[i])
-#         prev_dir = input[i-1][0]
-#         cur_dir = input[i][0]
-#         cur_move = int(input[i][1:])
-#         if i % 2 != 0: 
-#         # y axis
-#             if prev_dir == "L":
-#                 if cur_dir == "L": 
-#                     y -= cur_move
-#                     choice = 1
-#                 else: 
-#                     y += cur_move
-#                     choice = 2
-#             else:
-#                 if cur_dir == "L": 
-#                     y += cur_move
-#                     choice = 3
-#                 else: 
-#                     y -= cur_move
-#                     choice = 4
-#         else:
-#         # x axis
-#             if prev_dir == "L":
-#                 if cur_dir == "L": 
-#                     x += cur_move
-#                     choice = 5
-#                 else: 
-#                     x -= cur_move
-#                     choice = 6
-#             else:
-#                 if cur_dir == "L": 
-#                     x -= cur_move
-#                     choice = 7
-#                 else: 
-#                     x += cur_move
-#                     choice = 8
-#         print(choice)
-
-#     return (x, y), abs(x) + abs(y)
-
 def part_one(cmds):
     dir = 0
     pos, found = [0, 0, 0, 0], []
