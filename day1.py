@@ -21,6 +21,7 @@ def part_one(cmds):
             elif not found:
                 found = pos.copy()
             pos[dir] += 1
+        print(pos)
     return abs(pos[0] - pos[2]) + abs(pos[1] - pos[3])
 
 def part_two(input):
